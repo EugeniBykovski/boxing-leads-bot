@@ -1,15 +1,27 @@
 {
   "name": "boxing-leads-bot",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "description": "Finds Warsaw boxing-coaching requests on Threads and sends them to a private Telegram chat",
+  "type": "module",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=22.12"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "node --import tsx --test \"test/**/*.test.ts\"",
+    "demo": "tsx src/demo.ts",
+    "scan:once": "tsx src/scanOnce.ts",
+    "threads:check": "tsx src/threadsCheck.ts",
+    "telegram:whoami": "tsx src/telegramWhoami.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
   "dependencies": {
     "better-sqlite3": "^13.0.3",
     "grammy": "^1.46.0"

@@ -1,4 +1,20 @@
 node_modules/
-.env
-data/
 dist/
+data/
+
+# local environment (keep .env.example tracked)
+.env
+.env.*
+!.env.example
+
+# SQLite databases and sidecars
+*.sqlite
+*.sqlite3
+*.db
+*.sqlite-wal
+*.sqlite-shm
+*.db-wal
+*.db-shm
+*-journal
+
+.DS_Store
